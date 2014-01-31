@@ -1,0 +1,5 @@
+#!/bin/bash
+emacsclient -e "(kill-emacs)"
+# Restart emacs daemon
+emacs --daemon &
+
