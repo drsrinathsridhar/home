@@ -1,0 +1,244 @@
+# ~/.bashrc: executed by bash(1) for non-login shells. -*-sh-*-
+# $Id: bashrc_private,v 1.2 2011/10/26 12:57:27 sbender Exp $ /mpietc/dotfiles/skel/bashrc_private
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Srinath's additions. [ TODO ]: Backup later.
+# What is the username?
+SRINATH=ssridhar
+
+# Add local installation directory to PATH
+export PATH=$PATH:/home/${SRINATH}/local/bin
+
+# Add local installation directory to lib path
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${SRINATH}/local/lib
+
+# Add some directories for default cd. Like bookmarks. But can also be a pain
+export CDPATH=$CDPATH:/home/${SRINATH}/Desktop
+
+# Add some aliases
+alias l='ls -l'
+alias ..='cd ..'
+alias c='clear'
+alias r='reset'
+alias h='history'
+alias x='exit'
+alias m='make'
+alias mb='make -B'
+alias mj='make -j'
+alias m8='make -j 8' # For systems with 8 cores
+alias m4='make -j 4' # For systems with 4 cores
+alias mb8='make -B -j 8' # Rebuild with 8 threads
+alias mb4='make -B -j 4' # Rebuild with 4 threads
+alias emacs='/home/${SRINATH}/local/bin/emacs'
+alias google-chrome='chromium'
+# Count number of lines in directory
+alias linecount='find . -name '$*' | xargs wc -l'
+
+
+# Aliases to open some programs in opt which are not installed
+alias zotero='$HOME/opt/zotero/zotero &'
+alias coriander='$HOME/opt/coriander-2.0.2/src/coriander &'
+
+# For subversion (svn) setup default editor
+#export SVN_EDITOR=emacsclient
+export SVN_EDITOR=pico
+
+# Quick utility functions (instead of aliases)
+ec()
+{
+    emacsclient -c "$*" &
+}
+
+# Various functions/aliases for file counting
+# Quick way to recursively count files
+lcr()
+{
+    if [ $# == 0 ]; then # Assume current directory
+	args="."
+    else
+	args="$*"
+    fi
+    find $args -type f -print | wc -l
+}
+
+# Quick way to recursively count symlinks only
+lcr_sym()
+{
+    if [ $# == 0 ]; then # Assume current directory
+	args="."
+    else
+	args="$*"
+    fi
+    find $args -type l -print | wc -l
+}
+
+lc()
+{
+    # The -1 is for the first line of ls -l which is not a file
+    echo "File count: " $(( `ls -l $* | wc -l` - 1 ))
+}
+# Count the number of hidden files only in a directory
+lch()
+{
+    # The -2 is for . and .. files
+    echo "Hidden file count: " $(( `ls -la  $* | wc -l` - `ls -l $* | wc -l` - 2 ))
+}
+# Recursively search within files in pwd
+findr()
+{
+    grep -r "$*" .
+}
+
+
+# TODO
+# Fischer-Yates Random Shuffle from http://mywiki.wooledge.org/BashFAQ/026
+# Does inplace shuffling.  Must be compact (not a sparse array).
+shuffle()
+{
+    if [ $# -eq 0 ]; then
+    	echo "[ USAGE ]: shuffle <BASH_VAR_NAME_TO_SHUFFLE_IN_PLACE>[@]"
+    	return
+    fi
+    array=("${!1}")
+    echo ${array[@]}
+    local i tmp size max rand
+
+    # $RANDOM % (i+1) is biased because of the limited range of $RANDOM
+    # Compensate by using a range which is a multiple of the array size.
+    size=${#array[*]}
+    max=$(( 32768 / size * size ))
+
+    for ((i=size-1; i>0; i--)); do
+	while (( (rand=$RANDOM) >= max )); do :; done
+	rand=$(( rand % (i+1) ))
+	tmp=${array[i]} array[i]=${array[rand]} array[rand]=$tmp
+    done
+
+    echo ${array[@]}
+}
+
+
+# ANSI-COLOR-CODES-##
+Color_Off="\[\033[0m\]"
+###-Regular-###
+Red="\[\033[0;31m\]"
+Green="\[\033[0;32m\]"
+Purple="\[\033[0;35m\]"
+Yellow="\[\033[0;33m\]"
+####-Bold-####
+BColor_Off="\[\033[1;0m\]"
+BRed="\[\033[1;31m\]"
+BGreen="\[\033[1;32m\]"
+BPurple="\[\033[1;35m\]"
+BYellow="\[\033[1;33m\]"
+
+# Customize prompt
+# PS1="\t $PS1"
+PS1="[$BColor_Off\@] $BRed\u$Color_Off@$BGreen\h$Color_Off:$Yellow\w$Color_Off \$ "
+
+# Unlimited bash history
+export HISTFILESIZE=
+export HISTSIZE=
+
+# Copy current line bind key. TODO
+#bind '"\C-]":"\C-e\C-u xclip <<"EOF"\n\C-y\nEOF\n"'
+
+# List all commands
+function ListAllCommands
+{
+	echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 -executable -type f -printf '%P\n' | sort -u
+}

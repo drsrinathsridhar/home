@@ -1,0 +1,80 @@
+((("CV_8UC3" .
+   [1 0 0 0 0 0 0])
+  ("CV_8U" .
+   [1 0 0 0 0])
+  ("m_Mesh" .
+   [2 0 0 0 0 2])
+  ("ScaledImx" .
+   [1 0 0 0 0 0 0 0 0])
+  ("Qty" .
+   [1 0 0])
+  ("Imy" .
+   [1 0 0])
+  ("NodeHeight" .
+   [1 0 0 0 0 0 0 0 1 0])
+  ("NodeHei" .
+   [1 0 0 0 0 0 0])
+  ("NodeHe" .
+   [1 0 0 0 0 0])
+  ("RowIdx" .
+   [0 0 0 0 0 1])
+  ("ColIdx" .
+   [2 0 0 0 0 0])
+  ("NodesPerRow" .
+   [1 0 0 0 0 0 0 0 0 0 1])
+  ("NumRows" .
+   [1 0 0 0 0 0 0])
+  ("m_nNodes" .
+   [0 0 0 0 0 0 0 1])
+  ("NodeIndex" .
+   [2 0 0 0 0 0 0 0 0])
+  ("m_isAssociationValid" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("Idx" .
+   [1 0 0])
+  ("m_AssociatedFrameIdx" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("m_is2DPosValid" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("m_2DPosition" .
+   [0 0 0 0 0 0 0 0 0 0 0 2])
+  ("m_AnnoList" .
+   [2 0 0 0 0 0 0 0 0 3])
+  ("string" .
+   [2 0 0 1 0 0])
+  ("MCamera" .
+   [1 0 0 1 0 0 1])
+  ("CameraNetwork" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 3])
+  ("Camera" .
+   [1 0 0 0 0 0])
+  ("CameraNode" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("Annotation" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("m_Annotations" .
+   [2 0 0 0 0 0 2 0 0 0 0 0 0])
+  ("m_AnnoConfigFile" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("m_AnnoOutFile" .
+   [0 0 0 0 0 0 2 0 0 0 0 0 1])
+  ("m_CamNet" .
+   [1 0 0 0 0 0 0 0])
+  ("ios_base" .
+   [1 0 0 0 0 0 0 0])
+  ("m_MeshPath" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("warning" .
+   [0 0 0 0 0 0 1])
+  ("m_PartPopup" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("exec" .
+   [1 0 0 0])
+  ("MeshPartDefinition" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("m_Character" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("m_PoseGenerator" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("Vector2X" .
+   [3 0 0 0 0 0 0 0])))
