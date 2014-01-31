@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="chromium.desktop" open-window-count="1" score="24284.066674490983" last-seen="1391181902"/>
+    <application id="nautilus.desktop" open-window-count="1" score="5569.3192933227401" last-seen="1391181923"/>
+    <application id="libreoffice-impress.desktop" open-window-count="0" score="85.5" last-seen="1390897164"/>
+    <application id="gedit.desktop" open-window-count="0" score="1.953125" last-seen="1390585423"/>
+    <application id="vlc.desktop" open-window-count="0" score="10.78515625" last-seen="1391013442"/>
+    <application id="stellarium.desktop" open-window-count="0" score="0.25" last-seen="1390813429"/>
+    <application id="file-roller.desktop" open-window-count="0" score="2" last-seen="1391177818"/>
+    <application id="celestia.desktop" open-window-count="0" score="0.75" last-seen="1390813461"/>
+    <application id="gnome-system-monitor.desktop" open-window-count="0" score="7" last-seen="1391180313"/>
+    <application id="gnome-terminal.desktop" open-window-count="1" score="1458.24609375" last-seen="1391181926"/>
+    <application id="gimp.desktop" open-window-count="0" score="3" last-seen="1390927037"/>
+    <application id="iceweasel.desktop" open-window-count="0" score="7.5" last-seen="1390905141"/>
+    <application id="emacsclient.desktop" open-window-count="0" score="0" last-seen="0"/>
+    <application id="alacarte-made-1.desktop" open-window-count="0" score="0" last-seen="1391076159"/>
+    <application id="meshlab.desktop" open-window-count="0" score="1.46875" last-seen="1390846501"/>
+    <application id="eog.desktop" open-window-count="0" score="65.34375" last-seen="1391180659"/>
+    <application id="evince.desktop" open-window-count="0" score="66.99609375" last-seen="1391180012"/>
+    <application id="alacarte-made-4.desktop" open-window-count="0" score="4.9375" last-seen="1391002393"/>
+    <application id="gpk-update-viewer.desktop" open-window-count="0" score="0" last-seen="1390902001"/>
+  </context>
+</application-state>
