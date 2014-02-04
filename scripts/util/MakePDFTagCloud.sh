@@ -29,9 +29,11 @@ fi
 if (( $# == 7 ));
 then
     FONT="font-family: '$6', sans-serif;src: url($7) format("truetype");"
+    FONTNAME="$6"
 #    echo ${FONT}
 else
-    FONT="font-family:'sans-serif'"
+    FONT="font-family:'sans-serif';"
+    FONTNAME="sans-serif"
 fi
 
 
@@ -48,7 +50,7 @@ BEGIN {
     
     print "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
     print "<svg width=\"",WIDTH,"\" height=\"",HEIGHT,"\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">"
-    print "<style type=\"text/css\"> @font-face {'${FONT}'} .customfont {font: '$6';} </style>"
+    print "<style type=\"text/css\"> @font-face {'${FONT}'} .customfont {font: '${FONTNAME}';} </style>"
 }
 
 { 
@@ -93,4 +95,4 @@ df | awk "${MakeCloud}" < freqtrunc.txt > ${OUT}.svg
 convert ${OUT}.svg ${OUT}
 
 # Cleanup. Delete all except the requested file
-rm raw.txt cleaned.txt words.txt frequencies.txt freqtrunc.txt #${OUT}.svg
+rm raw.txt cleaned.txt words.txt frequencies.txt freqtrunc.txt ${OUT}.svg
