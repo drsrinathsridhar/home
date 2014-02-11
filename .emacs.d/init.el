@@ -226,3 +226,11 @@ This functions should be added to the hooks of major modes for programming."
                                    (nnimap-authinfo-file "~/.netrc")
                                    (nnimap-stream ssl))
       gnus-summary-line-format "%U%R%z%B%(%[%4L: %-23,23f%]%) %s\n")
+
+;; ===============================
+;; PAPER WRITING
+;; ===============================
+; From Matt Might's suggestions
+;(add-to-list 'load-path "")
+(require 'writegood-mode)
+(global-set-key "\C-cg" 'writegood-mode)
