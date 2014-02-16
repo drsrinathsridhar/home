@@ -2,7 +2,7 @@
 # Create a list of words in a PDF file and sort them by frequency
 # Then write this to a PNG file
 # Usage: $0 <Path_to_stopwords_file> <PDF_filename> <OutputImageFile> [<Image_Width = 1024> <Image_Height = 768> <Font-name> <Path_To_Font = sans-serif>]
-# NOTE: Needs a stopwords file. Present in the PWD
+# NOTE: Needs a stopwords file. Available in ../res or http://skipperkongen.dk/files/english-stopwords-short.txt
 # Ack.: http://skipperkongen.dk/2011/09/07/creating-a-word-cloud-from-pdf-documents/
 # http://jwalanta.blogspot.de/2010/11/generating-tagcloud-unix-way.html
 
