@@ -1,6 +1,6 @@
 ;; This is .emacs of Srinath Sridhar (www.srinathsridhar.com)
 ;; Tested in GNU Emacs 24.3 under Debian Wheezy
-;; Updated: 19-Jan-2014
+;; Updated: 16-Feb-2014
 
 ;; Functions to load user's config files
 (defconst user-init-dir
@@ -136,6 +136,8 @@ This functions should be added to the hooks of major modes for programming."
     (recentf-mode 1)
     (setq recentf-max-menu-items 25)
     (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+;; Toggle line wrap
+(global-set-key (kbd "C-c l") 'toggle-truncate-lines)
 
 ;; ===============================
 ;; EMACS MODES
@@ -201,6 +203,10 @@ This functions should be added to the hooks of major modes for programming."
  ;; If there is more than one, they won't work right.
  )
 
+;; Enable ido-mode everywhere
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1) 
 
 ;; ===============================
 ;; EMAIL
