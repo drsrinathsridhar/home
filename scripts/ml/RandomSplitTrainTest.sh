@@ -19,14 +19,13 @@ nTestLines=$(( ${nLines} - ${nTrainLines} ))
 echo "Creating ${nTestLines} testing samples."
 
 # First generate a sequence of numbers and shuffle it to get random indices within range
-seq 1 ${nTrainLines} | shuf > random_train.txt
-seq $(( ${nTrainLines} + 1 )) ${nLines} | shuf > random_test.txt 
+seq 1 ${nLines} | shuf > random.txt
 
-paste <(cat random_train.txt) <(head -${nTrainLines} ${DataFile}) | sort | cut -f2- > $(dirname ${DataFile})/TrainData.txt
-paste <(cat random_train.txt) <(head -${nTrainLines} ${LabelFile}) | sort | cut -f2- > $(dirname ${DataFile})/TrainLabels.txt
+paste <(cat random.txt) <(cat ${DataFile}) | sort | head -${nTrainLines} | cut -f2- > $(dirname ${DataFile})/TrainData.txt
+paste <(cat random.txt) <(cat ${LabelFile}) | sort | head -${nTrainLines} | cut -f2- > $(dirname ${LabelFile})/TrainLabels.txt
 
-paste <(cat random_test.txt) <(sed -n "$(( ${nTrainLines} + 1 )),${nLines}p" ${DataFile}) | sort | cut -f2- > $(dirname ${DataFile})/TestData.txt
-paste <(cat random_test.txt) <(sed -n "$(( ${nTrainLines} + 1 )),${nLines}p" ${LabelFile}) | sort | cut -f2- > $(dirname ${DataFile})/TestLabels.txt
+paste <(cat random.txt) <(cat ${DataFile}) | sort | sed -n "$(( ${nTrainLines} + 1 )),${nLines}p" | cut -f2- > $(dirname ${DataFile})/TestData.txt
+paste <(cat random.txt) <(cat ${LabelFile}) | sort | sed -n "$(( ${nTrainLines} + 1 )),${nLines}p" | cut -f2- > $(dirname ${LabelFile})/TestLabels.txt
 
 # Cleanup
-rm random_*
+rm random.txt
