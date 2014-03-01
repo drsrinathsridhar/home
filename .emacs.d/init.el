@@ -30,6 +30,12 @@ require 'package)
 ;; Zenburn theme (package zenburn-theme on ELPA)
 (load-theme 'zenburn t)
 
+;; ;; tomorrow-theme
+;; (load-file "~/.emacs.d/themes/tomorrow-theme/color-theme-tomorrow.el")
+;; (require 'color-theme-tomorrow)
+;; ;;(color-theme-tomorrow--define-theme night)
+;; (color-theme-tomorrow--define-theme night-bright)
+
 ;; Solarized load theme either light or dark
 ;;(load-theme 'solarized-light t)
 ;; (load-theme 'solarized-dark t)
@@ -207,6 +213,9 @@ This functions should be added to the hooks of major modes for programming."
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1) 
+
+;; Powerline
+(require 'powerline)
 
 ;; ===============================
 ;; EMAIL
