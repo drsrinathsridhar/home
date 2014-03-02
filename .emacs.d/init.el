@@ -217,6 +217,10 @@ This functions should be added to the hooks of major modes for programming."
 ;; Powerline
 (require 'powerline)
 
+;; Dont echo the password when logging in form the emacs shell
+(add-hook 'comint-output-filter-functions
+      'comint-watch-for-password-prompt)
+
 ;; ===============================
 ;; EMAIL
 ;; ===============================

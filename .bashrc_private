@@ -230,6 +230,9 @@ BYellow="\[\033[1;33m\]"
 # PS1="\t $PS1"
 PS1="[$BColor_Off\@] $BRed\u$Color_Off@$BGreen\h$Color_Off:$Yellow\w$Color_Off \$ "
 
+# Better terminal colours
+export TERM=xterm-256color
+
 # Unlimited bash history
 export HISTFILESIZE=
 export HISTSIZE=
