@@ -51,6 +51,8 @@ require 'package)
 ;; (add-hook 'server-done-hook 'thj-reload-solarized-on-delete)
 ;; (add-hook 'after-make-frame-functions 'thj-reload-solarized)
 
+;; Nice font from the web
+(set-default-font "Inconsolata 12")
 ;; Set font size at 10 pt
 (set-face-attribute 'default nil :height 102)
 ;; Comment mode style
