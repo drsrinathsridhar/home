@@ -51,9 +51,10 @@ require 'package)
 ;; (add-hook 'server-done-hook 'thj-reload-solarized-on-delete)
 ;; (add-hook 'after-make-frame-functions 'thj-reload-solarized)
 
-;; Nice font from the web
-(set-default-font "Inconsolata 12")
-;; Set font size at 10 pt
+;; Set font if needed. Default Debian is good.
+;; (add-to-list 'default-frame-alist '(font . "Inconsolata 12"))
+
+;; Set font size. In 1/10 pt. 102 is optimal for default Debian font
 (set-face-attribute 'default nil :height 102)
 ;; Comment mode style
 (setq comment-style 'indent)
@@ -114,7 +115,7 @@ require 'package)
 
 This functions should be added to the hooks of major modes for programming."
   (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):"
+   nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\|@todo\\)):"
           1 font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
