@@ -1,7 +1,7 @@
 #!/bin/bash
-# [ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Print_Only>=[0 (default) | 1]
+# [ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Delete>=[0 (default) | 1]
 if [ $# -gt 2 ] || [ $# -lt 1 ]; then
-        echo "[ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Print_Only>=[0 (default) | 1]"
+        echo "[ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Delete>=[0 (default) | 1]"
         exit
 fi
 

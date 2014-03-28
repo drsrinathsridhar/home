@@ -73,6 +73,10 @@ require 'package)
 ;; Enable Mouse Avoidance
 ;;(mouse-avoidance-mode 1)
 
+;; Shortcut to invoke anything.el
+(global-set-key "\C-ca" 'anything)
+
+
 ;; ===============================
 ;; Programming
 ;; ===============================
@@ -147,6 +151,9 @@ This functions should be added to the hooks of major modes for programming."
     (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;; Toggle line wrap
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines)
+
+;; Make all "yes or no" prompts show "y or n" instead
+(fset 'yes-or-no-p 'y-or-n-p) 
 
 ;; ===============================
 ;; EMACS MODES

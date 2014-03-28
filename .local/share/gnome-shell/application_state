@@ -1,23 +1,30 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="chromium.desktop" open-window-count="2" score="16257.72708339446" last-seen="1393772080"/>
-    <application id="nautilus.desktop" open-window-count="2" score="3894.6509319790839" last-seen="1393771888"/>
-    <application id="vlc.desktop" open-window-count="0" score="38.9375" last-seen="1393757710"/>
-    <application id="gedit.desktop" open-window-count="1" score="1981.4215087890625" last-seen="1393771965"/>
-    <application id="gcalctool.desktop" open-window-count="0" score="9.625" last-seen="1393693591"/>
-    <application id="gopchop.desktop" open-window-count="0" score="0" last-seen="1393590698"/>
-    <application id="file-roller.desktop" open-window-count="0" score="0.515625" last-seen="1393524206"/>
-    <application id="xfe.desktop" open-window-count="0" score="0" last-seen="1393609253"/>
-    <application id="gnome-system-monitor.desktop" open-window-count="0" score="16.3359375" last-seen="1393606313"/>
-    <application id="gnome-terminal.desktop" open-window-count="2" score="19081.705047607422" last-seen="1393772141"/>
-    <application id="totem.desktop" open-window-count="0" score="0.5" last-seen="1393488799"/>
-    <application id="gimp.desktop" open-window-count="0" score="9" last-seen="1393757813"/>
+    <application id="totem.desktop" open-window-count="0" score="4.75" last-seen="1395922489"/>
     <application id="emacsclient.desktop" open-window-count="0" score="0" last-seen="0"/>
-    <application id="gnome-control-center.desktop" open-window-count="0" score="14.875" last-seen="1393262836"/>
-    <application id="eog.desktop" open-window-count="0" score="69.104248046875" last-seen="1393758073"/>
-    <application id="evince.desktop" open-window-count="0" score="4054.5234069824219" last-seen="1393771671"/>
-    <application id="gnome-shell-extension-prefs.desktop" open-window-count="0" score="2.25" last-seen="1393682067"/>
-    <application id="alacarte-made-4.desktop" open-window-count="0" score="77.00732421875" last-seen="1393758136"/>
+    <application id="session-properties.desktop" open-window-count="0" score="4.75" last-seen="1395235288"/>
+    <application id="gnome-terminal.desktop" open-window-count="2" score="2711.927383184433" last-seen="1396003232"/>
+    <application id="vlc.desktop" open-window-count="0" score="73.64794921875" last-seen="1395325849"/>
+    <application id="nautilus.desktop" open-window-count="0" score="1072.2628979060867" last-seen="1395943862"/>
+    <application id="gnome-control-center.desktop" open-window-count="0" score="9.71875" last-seen="1395922717"/>
+    <application id="chromium.desktop" open-window-count="1" score="14830.64630533902" last-seen="1396004457"/>
+    <application id="celestia.desktop" open-window-count="0" score="1.125" last-seen="1395137236"/>
+    <application id="audacity.desktop" open-window-count="0" score="34.0625" last-seen="1394790867"/>
+    <application id="evolution.desktop" open-window-count="0" score="0" last-seen="1395324529"/>
+    <application id="gcm-viewer.desktop" open-window-count="0" score="0" last-seen="1395240682"/>
+    <application id="evince.desktop" open-window-count="0" score="790.70721411705017" last-seen="1395947728"/>
+    <application id="gcalctool.desktop" open-window-count="0" score="1.6376953125" last-seen="1394822022"/>
+    <application id="alacarte-made-4.desktop" open-window-count="0" score="5.6641197204589844" last-seen="1395770402"/>
+    <application id="eog.desktop" open-window-count="0" score="39.477376937866211" last-seen="1395905127"/>
+    <application id="gnome-shell-extension-prefs.desktop" open-window-count="0" score="2.75" last-seen="1395235619"/>
+    <application id="gnome-tweak-tool.desktop" open-window-count="0" score="5.5625" last-seen="1395234896"/>
+    <application id="palimpsest.desktop" open-window-count="0" score="0" last-seen="1395735967"/>
+    <application id="gnome-system-monitor.desktop" open-window-count="0" score="0" last-seen="1395131851"/>
+    <application id="gimp.desktop" open-window-count="0" score="5.9765625" last-seen="1395905143"/>
+    <application id="kde4-yakuake.desktop" open-window-count="0" score="0" last-seen="1395946101"/>
+    <application id="file-roller.desktop" open-window-count="0" score="0.125" last-seen="1395735150"/>
+    <application id="skype.desktop" open-window-count="0" score="6" last-seen="1395137233"/>
+    <application id="gedit.desktop" open-window-count="0" score="47.518918037414551" last-seen="1395942772"/>
   </context>
 </application-state>
