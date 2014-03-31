@@ -163,6 +163,10 @@ This functions should be added to the hooks of major modes for programming."
 (defun turn-on-flyspell () (flyspell-mode 1))
 (add-hook 'find-file-hooks 'turn-on-flyspell)
 
+;; Quick navigation using ace
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 
 ;; ===============================
 ;; MISCELLNEAOUS
