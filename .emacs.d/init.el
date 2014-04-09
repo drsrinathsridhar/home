@@ -1,6 +1,5 @@
 ;; This is .emacs of Srinath Sridhar (www.srinathsridhar.com)
 ;; Tested in GNU Emacs 24.3 under Debian Wheezy
-;; Updated: 16-Feb-2014
 
 ;; Functions to load user's config files
 (defconst user-init-dir
@@ -56,6 +55,9 @@ require 'package)
 
 ;; Set font size. In 1/10 pt. 102 is optimal for default Debian font
 (set-face-attribute 'default nil :height 102)
+;; Change display font size
+(global-set-key [C-kp-add] 'text-scale-increase)
+(global-set-key [C-kp-subtract] 'text-scale-decrease)
 ;; Comment mode style
 (setq comment-style 'indent)
 ;; Define cursor type
@@ -73,9 +75,11 @@ require 'package)
 ;; Enable Mouse Avoidance
 ;;(mouse-avoidance-mode 1)
 
+;; Truncate lines everywhere
+(toggle-truncate-lines)
+
 ;; Shortcut to invoke anything.el
 (global-set-key "\C-ca" 'anything)
-
 
 ;; ===============================
 ;; Programming
