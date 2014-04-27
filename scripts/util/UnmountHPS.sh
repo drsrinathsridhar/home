@@ -8,4 +8,4 @@ fi
 
 USER=$1
 fusermount -u /HPS
-fusermount -u /home/${USER}
+#fusermount -u /home/${USER}
