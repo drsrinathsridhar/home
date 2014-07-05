@@ -1,10 +1,20 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="emacs24.desktop" open-window-count="0" score="3856.0312510004733" last-seen="1397063355"/>
-    <application id="evince.desktop" open-window-count="0" score="0" last-seen="1398445832"/>
-    <application id="nautilus.desktop" open-window-count="0" score="5096.5625102345457" last-seen="1398448456"/>
-    <application id="google-chrome.desktop" open-window-count="2" score="7961.8504405674175" last-seen="1398583100"/>
-    <application id="file-roller.desktop" open-window-count="0" score="0" last-seen="1398540494"/>
+    <application id="gnome-control-center.desktop" open-window-count="0" score="1.00030517578125" last-seen="1404593475"/>
+    <application id="iceweasel.desktop" open-window-count="0" score="3.0517578125e-05" last-seen="1404034050"/>
+    <application id="nautilus.desktop" open-window-count="0" score="0.0026702894829213619" last-seen="1404587235"/>
+    <application id="file-roller.desktop" open-window-count="0" score="0" last-seen="1404170075"/>
+    <application id="gedit.desktop" open-window-count="0" score="0.000244140625" last-seen="1404586183"/>
+    <application id="vlc.desktop" open-window-count="0" score="0.000762939453125" last-seen="1404078162"/>
+    <application id="google-chrome.desktop" open-window-count="1" score="21375.273572648293" last-seen="1404597850"/>
+    <application id="gnome-terminal.desktop" open-window-count="2" score="9989.5282692704932" last-seen="1404597811"/>
+    <application id="bluefish.desktop" open-window-count="0" score="0" last-seen="1404586375"/>
+    <application id="skype.desktop" open-window-count="0" score="4.57763671875e-05" last-seen="1404035824"/>
+    <application id="evince.desktop" open-window-count="0" score="0.0137786865234375" last-seen="1404586206"/>
+    <application id="libreoffice-impress.desktop" open-window-count="0" score="0" last-seen="1404586221"/>
+    <application id="emacs.desktop" open-window-count="0" score="82.017105102539062" last-seen="1404587964"/>
+    <application id="gnome-system-monitor.desktop" open-window-count="0" score="4.57763671875e-05" last-seen="1404068846"/>
+    <application id="cheese.desktop" open-window-count="0" score="9.1552734375e-05" last-seen="1404131490"/>
   </context>
 </application-state>

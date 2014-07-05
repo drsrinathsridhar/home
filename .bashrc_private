@@ -105,6 +105,7 @@ export PATH=$PATH:/home/${SRINATH}/local/bin
 
 # Add local installation directory to lib path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${SRINATH}/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/PMDSDK/bin
 
 # Add some directories for default cd. Like bookmarks. But can also be a pain
 export CDPATH=$CDPATH:/home/${SRINATH}/Desktop
