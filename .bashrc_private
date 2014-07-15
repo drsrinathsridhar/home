@@ -96,19 +96,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Srinath's additions. [ TODO ]: Backup later.
-# What is the username?
-SRINATH=ssridhar
-
+# Srinath's additions
 # Add local installation directory to PATH
-export PATH=$PATH:/home/${SRINATH}/local/bin
+export PATH=$PATH:${HOME}/local/bin
 
 # Add local installation directory to lib path
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/${SRINATH}/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/local/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/PMDSDK/bin
 
 # Add some directories for default cd. Like bookmarks. But can also be a pain
-export CDPATH=$CDPATH:/home/${SRINATH}/Desktop
+export CDPATH=$CDPATH:${HOME}/Desktop
+
+# Ask python to look here for packages
+export PYTHONPATH=$PYTHONPATH:${HOME}/local/lib/python2.7/site-packages
 
 # Add some aliases
 alias l='ls -l'
@@ -124,7 +124,7 @@ alias m8='make -j 8' # For systems with 8 cores
 alias m4='make -j 4' # For systems with 4 cores
 alias mb8='make -B -j 8' # Rebuild with 8 threads
 alias mb4='make -B -j 4' # Rebuild with 4 threads
-alias emacs='/home/${SRINATH}/local/bin/emacs'
+alias emacs='${HOME}/local/bin/emacs'
 alias google-chrome='chromium'
 # Count number of lines in directory
 alias linecount='find . -name '$*' | xargs wc -l'

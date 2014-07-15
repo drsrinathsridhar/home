@@ -13,3 +13,5 @@ fi
 if [ -f $HOME/.bashrc_private ] ; then 
     . $HOME/.bashrc_private
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
