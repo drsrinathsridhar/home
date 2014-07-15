@@ -1,7 +1,7 @@
 #!/bin/bash
-# [ USAGE ]: bash CleanSVNFiles.sh
-if [ $# -eq 0 ]; then
-        echo "[ USAGE ]: bash MountHPS.sh <SourceDir> [<List (0 - default) | Delete (1 - must be forced)>]"
+# [ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Delete>=[0 (default) | 1]
+if [ $# -gt 2 ] || [ $# -lt 1 ]; then
+        echo "[ USAGE ]: bash CleanSVNFiles.sh <Directory_Path> <Delete>=[0 (default) | 1]"
         exit
 fi
 
@@ -13,8 +13,10 @@ else
 fi
 
 if (( PRINT == 0 )); then
+    echo "Found SVN files: (Please use the 1 for the second argument to delete) "
     find ${SRCDIR} -name .svn -exec echo '{}' \;
 else
+    echo "Deleting: "
     find ${SRCDIR} -name .svn -exec echo '{}' \;
     find ${SRCDIR} -name .svn -exec rm -rf '{}' \;
 fi
