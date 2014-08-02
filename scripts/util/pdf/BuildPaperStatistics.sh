@@ -57,6 +57,9 @@ bash ${HOME}/scripts/util/pdf/MakePDFTagCloud2.sh ${HOME}/scripts/res/stopwords.
 # Write out number of words by appending to file
 pdftotext ${BaseFileName}.pdf - | wc -w >> ${FilePath}/progress/WordCount.txt
 
+# Write out timestamps to file
+echo ${NOW} >> ${FilePath}/progress/TimeStamps.txt
+
 # Clean temp files. This increases build time but is worth to keep directory clean.
 rm *.log *.aux *.out
 

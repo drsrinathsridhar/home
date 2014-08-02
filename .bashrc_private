@@ -129,6 +129,10 @@ alias google-chrome='chromium'
 # Count number of lines in directory
 alias linecount='find . -name '$*' | xargs wc -l'
 
+# Git quick aliases
+alias gits='git status .'
+alias gitsa='git status'
+
 # Aliases to open some programs in opt which are not installed
 alias zotero='$HOME/opt/zotero/zotero &'
 alias coriander='$HOME/opt/coriander-2.0.2/src/coriander &'
