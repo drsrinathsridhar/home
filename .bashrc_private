@@ -133,7 +133,8 @@ alias linecount='find . -name '$*' | xargs wc -l'
 alias gits='git status .'
 alias gitsa='git status'
 alias gita='git add -u'
-alias gitp='git push'
+alias gith='git push'
+alias gitl='git pull'
 
 # Aliases to open some programs in opt which are not installed
 alias zotero='$HOME/opt/zotero/zotero &'
