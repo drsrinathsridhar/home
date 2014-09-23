@@ -37,7 +37,8 @@ else
 fi
 
 # Convert PDF to a hidden file
-pdftotext ${IN} raw.txt
+# Convert ligatures such as fi to ASCII
+pdftotext -enc ASCII7 ${IN} raw.txt
 perl -lpe s/[^[:print:]]+//g raw.txt >> cleaned.txt # Clean and keep only printable chars
 
 # Keep only characters, make them lower case, put each word on a line, remove stopwords and some garbage. Sort them for good measure:
