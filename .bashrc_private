@@ -103,6 +103,8 @@ export PATH=$PATH:${HOME}/local/bin
 # Add local installation directory to lib path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/local/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/PMDSDK/bin
+# For the intel compiler
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2015.0.090/compiler/lib/intel64
 
 # Add some directories for default cd. Like bookmarks. But can also be a pain
 export CDPATH=$CDPATH:${HOME}/Desktop
