@@ -127,6 +127,9 @@ This functions should be added to the hooks of major modes for programming."
           1 font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
+;; CUDA Highlighting
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+
 ;; For cmake
 (setq load-path (cons (expand-file-name "~/.emacs.d/plugins") load-path))
 (require 'cmake-mode)
