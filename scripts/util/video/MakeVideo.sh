@@ -18,9 +18,9 @@ fi
 #mencoder "mf://${INPUTDIR}/*.${IMTYPE}" -mf fps=${INPUTFPS}:type=${IMTYPE} -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:vbitrate=7000 -oac copy -speed 0.1 -o ${OUTPUTFNAME}
 cd ${INPUTDIR}
 if [ ${NOASK} -eq 0 ]; then
-    ffmpeg -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -c:v mjpeg ${OUTPUTFNAME}
+    ffmpeg -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -vcodec mjpeg -b 10000k ${OUTPUTFNAME}
 else
-    ffmpeg -y -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -c:v mjpeg ${OUTPUTFNAME}
+    ffmpeg -y -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -vcodec mjpeg -b 10000k ${OUTPUTFNAME} 
 fi
 
 cd -
