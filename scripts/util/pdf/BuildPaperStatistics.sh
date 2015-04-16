@@ -6,15 +6,17 @@
 # Get time as a UNIX timestamp (seconds elapsed since Jan 1, 1970 0:00 UTC)
 TIC="$(date +%s)"
 
-if [ $# -lt 1 ] || [ $# -gt 2 ];
+if [ $# -lt 1 ] || [ $# -gt 3 ] || [ $# -eq 2 ];
 then
-    echo "Usage: $0 <Path/TeX_File> [<Number_of_Target_Pages = 10>]";
+    echo "Usage: $0 <Path/TeX_File> [<Rows = 2> <Cols = 5>: 10 pages]";
     exit;
 fi
 
-NumPages=10
-if [ $# -eq 2 ]; then
-    NumPages=$2
+NumRows=2
+NumCols=5
+if [ $# -eq 3 ]; then
+    NumRows=$2
+    NumCols=$3
 fi
 
 FileName="${1##*/}"
@@ -29,6 +31,10 @@ bibtex ${BaseFileName}.bib
 pdflatex ${BaseFileName}.tex
 pdflatex ${BaseFileName}.tex
 
+# Make directory if it doesn't exist then copy stuff
+mkdir -p ${FilePath}/progress/archive
+cp ${BaseFileName}.pdf ${FilePath}/progress/archive/${NOW}.pdf
+
 # Create paper statistics. Works only on Srinath's machine!
 clear
 echo "Done building LaTeX. Will attempt to build statistics for current paper version. Be patient this will take some time."
@@ -37,15 +43,7 @@ NOW=$(date +"%Y-%m-%d_%H%M")
 mkdir -p ${FilePath}/progress/snapshot
 # Also select pages. ImageMagick is 0-indexed
 ActualPages=$(pdfinfo ${BaseFileName}.pdf | grep Pages | sed 's/[^0-9]*//')
-if [ ${ActualPages} -ge ${NumPages} ]; then
-    montage -density 1000 ${BaseFileName}.pdf[0-$(( ${NumPages} - 1 ))] -mode Concatenate -tile $(( ${NumPages}/2 ))x2 -quality 80 -resize 800 ${FilePath}/progress/snapshot/${NOW}.png
-else
-    echo "[ WARN ]: Less than ${NumPages} pages in built PDF. Please check."
-    montage -density 1000 ${BaseFileName}.pdf -mode Concatenate -tile $(( (${ActualPages} - 1)/2 ))x2 -quality 80 -resize 800 ${FilePath}/progress/snapshot/${NOW}.png
-fi
-# Make directory if it doesn't exist then copy stuff
-mkdir -p ${FilePath}/progress/archive
-cp ${BaseFileName}.pdf ${FilePath}/progress/archive/${NOW}.pdf
+montage -density 1000 ${BaseFileName}.pdf -mode Concatenate -tile ${NumCols}x${NumRows} -quality 80 -resize 800 ${FilePath}/progress/snapshot/${NOW}.png
 
 # Create a two tag cloud versions. One with the same random seed and the other more beautiful
 mkdir -p ${FilePath}/progress/tagcloud1
