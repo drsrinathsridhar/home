@@ -116,6 +116,7 @@ export PYTHONPATH=$PYTHONPATH:${HOME}/local/lib/python2.7/site-packages
 # Add some aliases
 alias l='ls -l'
 alias ..='cd ..'
+alias ...='cd ../..'
 alias c='clear'
 alias r='reset'
 alias h='history'
