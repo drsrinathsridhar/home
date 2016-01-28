@@ -14,9 +14,9 @@ fi
 
 if (( PRINT == 0 )); then
     echo "Found SVN files: (Please use the 1 for the second argument to delete) "
-    find ${SRCDIR} -name .svn -exec echo '{}' \;
+    find ${SRCDIR} -type d -name .svn -exec echo '{}' \;
 else
     echo "Deleting: "
-    find ${SRCDIR} -name .svn -exec echo '{}' \;
-    find ${SRCDIR} -name .svn -exec rm -rf '{}' \;
+    find ${SRCDIR} -type d -name .svn -exec echo '{}' \;
+    find . -name .svn -print0 | xargs -0 rm -rf
 fi
