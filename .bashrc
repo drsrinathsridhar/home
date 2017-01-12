@@ -15,3 +15,6 @@ if [ -f $HOME/.bashrc_private ] ; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/ssridhar/opt/anaconda3/bin:$PATH"

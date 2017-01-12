@@ -1,8 +1,0 @@
-{
-"uuid": "weather-extension@xeked.com",
-"name": "Weather",
-"description": "A simple extension for displaying weather information from several cities in GNOME Shell",
-"shell-version": [ "3.4", "3.5", "3.6", "3.8" ],
-"localedir": "/usr/local/share/locale",
-"url": "https://github.com/Neroth/gnome-shell-extension-weather"
-}
