@@ -16,11 +16,21 @@ fi
 
 # Now merge them. Using default good codecs
 #mencoder "mf://${INPUTDIR}/*.${IMTYPE}" -mf fps=${INPUTFPS}:type=${IMTYPE} -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:vbitrate=7000 -oac copy -speed 0.1 -o ${OUTPUTFNAME}
-cd ${INPUTDIR}
-if [ ${NOASK} -eq 0 ]; then
-    ffmpeg -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -vcodec mjpeg -b 10000k ${OUTPUTFNAME}
+
+if [[ "${OUTPUTFNAME}" = /* ]]; then
+	FINALOUTFNAME="${OUTPUTFNAME}"
 else
-    ffmpeg -y -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -vcodec mjpeg -b 10000k ${OUTPUTFNAME} 
+	FINALOUTFNAME="`pwd`/${OUTPUTFNAME}"
+fi
+
+echo ${FINALOUTFNAME}
+
+cd ${INPUTDIR}
+
+if [ ${NOASK} -eq 0 ]; then
+    ffmpeg -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -c:v libx264 -vf format=yuv420p -b 10000k ${FINALOUTFNAME}
+else
+    ffmpeg -y -framerate ${FPS} -pattern_type glob -i "*.${IMTYPE}" -c:v libx264 -vf format=yuv420p -b 10000k ${FINALOUTFNAME} 
 fi
 
 cd -

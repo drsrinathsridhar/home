@@ -18,3 +18,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # added by Anaconda3 4.2.0 installer
 export PATH="/home/ssridhar/opt/anaconda3/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ssridhar/opt/google-cloud-sdk/path.bash.inc' ]; then source '/home/ssridhar/opt/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ssridhar/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/home/ssridhar/opt/google-cloud-sdk/completion.bash.inc'; fi
