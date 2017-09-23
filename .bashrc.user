@@ -75,11 +75,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -102,19 +97,15 @@ export PATH=$PATH:${HOME}/local/bin
 
 # Add local installation directory to lib path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/local/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/PMDSDK/bin
-# For the intel compiler
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2015/lib/intel64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/intel/composer_xe_2015/lib/intel64 # Some machines are local
+# # For the intel compiler
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2015/lib/intel64
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/intel/composer_xe_2015/lib/intel64 # Some machines are local
 
 # For Qt5
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/Qt/5.5/gcc_64/lib
 
 # Add some directories for default cd. Like bookmarks. But can also be a pain
 export CDPATH=$CDPATH:${HOME}/Desktop
-
-# Ask python to look here for packages
-export PYTHONPATH=$PYTHONPATH:${HOME}/local/lib/python2.7/site-packages
 
 # Add some aliases
 alias l='ls -l'
@@ -131,8 +122,11 @@ alias m8='make -j 8' # For systems with 8 cores
 alias m4='make -j 4' # For systems with 4 cores
 alias mb8='make -B -j 8' # Rebuild with 8 threads
 alias mb4='make -B -j 4' # Rebuild with 4 threads
-alias emacs='${HOME}/local/bin/emacs'
-alias google-chrome='chromium'
+alias emacs='emacs25 -nw'
+
+# Deep learning control center with GNU Screen
+alias dlcc='screen -c ${HOME}/.screenrc.dlcc'
+
 # Count number of lines in directory
 alias linecount='find . -name '$*' | xargs wc -l'
 
@@ -152,16 +146,11 @@ gitc()
     git commit -m "$*"
 }
 
-# Aliases to open some programs in opt which are not installed
-alias zotero='$HOME/opt/zotero/zotero &'
-alias coriander='$HOME/opt/coriander-2.0.2/src/coriander &'
-
 # For subversion (svn) setup default editor
-#export SVN_EDITOR=emacsclient
 export SVN_EDITOR=pico
 
 # For crontab
-export EDITOR=emacsclient
+export EDITOR=emacs
 
 # Quick utility functions (instead of aliases)
 ec()

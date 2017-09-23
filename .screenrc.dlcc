@@ -1,0 +1,59 @@
+# the following two lines give a two-line status, with the current window highlighted
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+# huge scrollback buffer
+defscrollback 5000
+
+# no welcome message
+startup_message off
+
+# 256 colors
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# mouse tracking allows to switch region focus by clicking
+mousetrack on
+
+# default windows
+screen -t Shell  1 bash
+screen -t emacs  2 emacs25 -nw
+screen -t MonitorGPU  3 watch -n 1 nvidia-smi
+screen -t Top   4 top
+select 0
+bind c screen 1 # window numbering starts at 1 not 0
+bind 0 select 10
+
+# get rid of silly xoff stuff
+bind s split
+
+# layouts
+# layout autosave on
+select 1
+split
+resize -v +10
+focus down
+select 3
+split -v
+#resize -h +10
+focus right
+select 4
+focus up
+#split -v
+#focus right
+#select 2
+#focus left
+
+# layout attach one
+# layout select one
+
+# navigating regions with Ctrl-arrows
+bindkey "^[[1;5D" focus left
+bindkey "^[[1;5C" focus right
+bindkey "^[[1;5A" focus up
+bindkey "^[[1;5B" focus down
+
+# switch windows with F3 (prev) and F4 (next)
+bindkey "^[OR" prev
+bindkey "^[OS" next

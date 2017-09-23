@@ -25,3 +25,6 @@ fi
 if [ -f ${HOME}/.bashrc.user ]; then
         . ${HOME}/.bashrc.user
 fi
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/home/ssrinath/local/anaconda3/bin:$PATH"
