@@ -100,7 +100,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/local/lib
 # # For the intel compiler
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2015/lib/intel64
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/intel/composer_xe_2015/lib/intel64 # Some machines are local
-alias matlab='${HOME}/local/matlab/bin/matlab'
 
 # For Qt5
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/Qt/5.5/gcc_64/lib
