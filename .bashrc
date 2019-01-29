@@ -28,3 +28,7 @@ fi
 
 # added by Anaconda3 4.4.0 installer
 export PATH="/home/ssrinath/local/anaconda3/bin:$PATH"
+export PATH="/raid/ssrinath/anaconda3/bin:$PATH"
+
+# added by Anaconda3 installer
+export PATH="/oriong5/ssrinath/anaconda3/bin:$PATH"
