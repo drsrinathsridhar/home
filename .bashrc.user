@@ -97,15 +97,25 @@ export PATH=$PATH:${HOME}/local/bin
 
 # Add local installation directory to lib path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/local/lib
-# # For the intel compiler
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2015/lib/intel64
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/intel/composer_xe_2015/lib/intel64 # Some machines are local
 
 # For Qt5
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/opt/Qt/5.5/gcc_64/lib
 
 # Add some directories for default cd. Like bookmarks. But can also be a pain
 export CDPATH=$CDPATH:${HOME}/Desktop
+
+# For Python on various systems. It's ok if directory does not exist
+# added by Anaconda3 4.4.0 installer
+export PATH="${HOME}/local/anaconda3/bin:$PATH"
+export PATH="/raid/ssrinath/anaconda3/bin:$PATH"
+export PATH="/oriong5/ssrinath/anaconda3/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '${HOME}/google-cloud-sdk/path.bash.inc' ]; then . '${HOME}/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '${HOME}/google-cloud-sdk/completion.bash.inc' ]; then . '${HOME}/google-cloud-sdk/completion.bash.inc'; fi
+
 
 # Add some aliases
 alias l='ls -lh'
